@@ -1,16 +1,24 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
+import { makeStyles } from '@material-ui/core/styles'
+import classNames from 'classnames'
 
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardActions from '@mui/material/CardActions';
-import Avatar from '@mui/material/Avatar';
+import {
+  Card,
+  CardHeader,
+  CardActions,
+  Avatar,
+  IconButton,
+} from '@material-ui/core';
 
-import IconButton from '@mui/material/IconButton';
+
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 
-
+const useStyles = makeStyles((theme) => ({
+  root: {
+    maxWidth:345,
+  },
+}))
 
 
  const CustomersCard = ({
@@ -18,11 +26,13 @@ import ShareIcon from '@material-ui/icons/Share';
      lastname,
      email,
      avatar,
+     className,
  }) => {
-  
+
+  const classes = useStyles()
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card className={classNames(className, classes.root)}>
       <CardHeader
         avatar={
           <Avatar  aria-label="recipe" src={avatar}>

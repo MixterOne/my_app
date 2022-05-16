@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core'
 
 
+
 import MenuIcon from '@material-ui/icons/Menu';
 import useStyles from './Header.style'
 
@@ -14,8 +15,8 @@ import useStyles from './Header.style'
 
 
 const Header = () => {
-    const classes = useStyles()
-
+    const classes = useStyles();
+    
     return (
         <AppBar position="static">
             <Toolbar>
