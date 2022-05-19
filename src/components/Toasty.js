@@ -13,22 +13,18 @@ const Toasty = ({ open, text, severity, onClose }) => {
     onClose()
   };
 
-  const action = (
-    <>
-      <MuiAlert elevation={6} variant="filled" severity={severity}>
-        {text}
-      </MuiAlert>
-    </>
-  );
-
   return (
     <>
       <Snackbar
         open={open}
         autoHideDuration={6000}
         onClose={handleClose}
-        action={action}
-      />
+      >
+      <MuiAlert elevation={6} variant="filled" severity={severity}>
+        {text}
+      </MuiAlert>
+      </Snackbar>
+      
     </>
   );
 }

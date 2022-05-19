@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }))
 
-const [openToasty, setOpenToast] = useState(false)
+
 
 const Register = () => {
     const classes = useStyles()
@@ -38,6 +38,8 @@ const Register = () => {
         })
     }
     
+    const [ openToasty, setOpenToasty ] = useState(false)
+
     const handleRegisterButton = () =>{
         let hasError = false
     
@@ -63,7 +65,7 @@ const Register = () => {
                 error: true,
                 helperText: 'Digite o campo cargo corretamente!'
             }
-    
+        }   
             if (hasError) {
                 return setForm(newFormState)
             }
@@ -74,13 +76,8 @@ const Register = () => {
             }).then((response) => {
                 setOpenToasty(true)
             })
-    
         }
-    }
-      
-    
-    
-    
+          
     return (
         <>
             <div className={classes.wrapper}>
